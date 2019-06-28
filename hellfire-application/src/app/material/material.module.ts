@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  MatSidenavModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatListModule,
+
+import { MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule,
 } from '@angular/material';
 
+
 @NgModule({
+  declarations: [],
   imports: [
+    CommonModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -21,11 +21,4 @@ import {
     MatListModule,
   ]
 })
-
-// Used for centralizing where all angular material is added into project
-@NgModule({
-  declarations: [],
-  imports: [CommonModule],
-  exports: []
-})
-export class MaterialModuleModule { }
+export class MaterialModule { }

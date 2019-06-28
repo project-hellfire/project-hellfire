@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Custom imports
-import { MaterialModuleModule } from '../material-module/material-module.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// This module contains all the other material imports wrapped in it!
+import {MaterialModule} from './material/material.module';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModuleModule
+    MaterialModule,
+    /*FlexLayoutModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
