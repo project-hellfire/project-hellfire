@@ -1,0 +1,37 @@
+<div class="header-bar">
+    <button class="hamburger-button" type="button" mat-button (click)="drawer.toggle()">
+        |||
+    </button>
+</div>
+
+<mat-drawer-container class="example-container" autosize [hasBackdrop]=true>
+
+    <div class="example-sidenav-content">
+        <!-- 
+        <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+        </button>
+        -->
+    </div>
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="sidenav-header">
+            <h1>Sidenav</h1>
+        </div>
+
+        <div class="sidenav-button-div" *ngFor="let buttonIndex of sidenavButtons">
+            <button class="sidenav-button" type="button" mat-button> 
+                button {{ buttonIndex }}
+            </button>
+        </div>
+
+        <!-- html for filler button-->
+        <!--
+            <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+            <button (click)="showFiller = !showFiller" mat-raised-button>
+                Toggle extra text
+            </button>
+                -->
+    </mat-drawer>
+
+</mat-drawer-container>

@@ -1,0 +1,60 @@
+.example-container {
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  border: 0% solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 0%;
+  align-items: left;
+  justify-content: left;
+}
+
+.example-sidenav {
+  padding: 20px;
+  width: 20%;
+  background-color: rgb(144, 25, 255);
+}
+
+.header-bar
+{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(38, 38, 38);    
+}
+
+.hamburger-button
+{
+    color: white;
+    background-color: rgb(52, 52, 52);
+    left: 0.2em;
+    top: 10%;
+    height: 80%;
+    width: 2%;
+}
+
+.sidenav-header
+{
+    width: 100%;
+    color: whitesmoke;
+    border: 2px;
+}
+
+.sidenav-button
+{
+    display: flex;
+    width: 80%;
+    color: whitesmoke;
+    background-color: rgb(52, 52, 52);
+    box-shadow: 1px 2px 5px black;
+    text-align: right;
+}
+
+.sidenav-button-div
+{
+    padding-bottom: 1em;
+}
+
+
