@@ -9,18 +9,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // This module contains all the other material imports wrapped in it!
 import {MaterialModule} from './material/material.module';
 import { CardComponent } from './card/card.component';
+import { PopupControllerComponent } from './popup-controller/popup-controller.component';
+import { PopupModalComponent } from './popup-modal/popup-modal.component';
+import { FormsModule } from '@angular/forms';
+
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    PopupControllerComponent,
+    PopupModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule
     /*FlexLayoutModule*/
   ],
   providers: [],

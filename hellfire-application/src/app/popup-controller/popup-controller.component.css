@@ -1,0 +1,10 @@
+
+.PopupButton
+{
+    top: 0%;
+    left: 20%;
+    background-color: rgb(60, 105, 201);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    color: whitesmoke;
+}

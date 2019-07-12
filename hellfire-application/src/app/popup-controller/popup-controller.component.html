@@ -1,0 +1,9 @@
+<div>
+    <button class="PopupButton" type="button" mat-button (click)="ToggleVisibility()"> New Post </button>
+</div>
+
+
+<app-popup-modal  
+    [visibleState]="showChildModal" 
+    (needsToClose) = "ToggleVisibility()" >
+</app-popup-modal>

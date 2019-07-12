@@ -1,0 +1,154 @@
+/* The Modal (background) */
+.modal {
+    display: show; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    top: 50%;
+    border: 1px solid #888;
+    width: 80%;
+    height: 50%;
+    overflow: auto;
+    border-radius: 25px;
+    box-shadow: 2px 3px 20px grey;
+    transition: opacity 2s ease-in-out;
+    
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    border-width: 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .content-text-area
+  {
+    width: 30%;
+    height: 20px;
+    padding: 12px 20px;
+    box-sizing: none;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    -webkit-transition: width 2s ease-out, height 1s ease-out; /* Safari prior 6.1 */
+    transition: width 2s, height 1s;
+  }
+
+  .content-text-area:focus
+  {
+    width: 80%;
+    height: 70px;
+  }
+
+  .add-label-button
+{
+    border-radius: 12px;
+    background-color: rgb(60, 105, 201);
+    width: 140px;
+    height: 35px;
+    color: white;
+    top: 100%;
+    left: 0%;
+}
+
+.label-dropdown
+{
+    position: relative;
+    height: 30%;
+    width: 25%;
+}
+
+.label-dropdown:hover .label-dropdown-content
+{
+    display: block;
+}
+
+.label-dropdown-content
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: scroll;
+}
+
+  .dropdown-button
+  {
+    color: rgb(2, 2, 2);
+    background-color: rgb(238, 238, 238);
+    padding: 12px 16px;
+    width: 100%;
+    border: 0px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-button:hover
+  {
+      background-color: rgb(172, 172, 172);
+  }
+  
+  .label-display
+  {
+      position: relative;
+      display: inline-block;
+      width: 14%;
+      height: 17px;
+      margin-top: 20px;
+      padding: 12px 20px;
+      box-sizing: none;
+      outline: none;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      background-color: #f8f8f8;
+      color: black;
+      font-size: 12px;
+      resize: none;
+      overflow: auto;
+  }
+
+  .label-input-container:hover .label-dropdown-contentt
+  {
+      display: block;
+      width: 10%;
+      height: 15%;
+  }
+
+  .label-dropdown-contentt
+  {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: scroll;
+  }

@@ -1,0 +1,47 @@
+<!-- The Modal -->
+<div id="myModal" class="modal" *ngIf="visibleState">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <button class="close" (click)="OnNeedToClose()">
+            &times;
+        </button>
+        <h1>New Post</h1>
+        <textarea [(ngModel)]='cardData.content' class="content-text-area" placeholder="What do you want to say to the world..."></textarea>
+        
+        <div class="label-area">
+                <div class="label-input-container">
+                <textarea class="label-display" placeholder="Label Sometshing"> </textarea>
+                <div class="label-dropdown-contentt">
+                    <!-- When one of these buttons is clicked it needs to send an index of the label
+                    to the label tag of the current post
+                    -->
+                        <button class="dropdown-button"> Label 1 </button>
+                        <button class="dropdown-button"> Label 2 </button>
+                        <button class="dropdown-button"> Label 3 </button>
+                        <button class="dropdown-button"> Label 4 </button>
+                        <button class="dropdown-button"> Label 5 </button>
+                        <button class="dropdown-button"> Label 6 </button>
+                        <button class="dropdown-button"> Label 7 </button>
+                        <button class="dropdown-button"> Label 8 </button>
+                        <button class="dropdown-button"> Label 9 </button>
+                        <button class="dropdown-button"> Label 1 </button>
+                        <button class="dropdown-button"> Label 2 </button>
+                        <button class="dropdown-button"> Label 3 </button>
+                        <button class="dropdown-button"> Label 4 </button>
+                        <button class="dropdown-button"> Label 5 </button>
+                        <button class="dropdown-button"> Label 6 </button>
+                        <button class="dropdown-button"> Label 7 </button>
+                        <button class="dropdown-button"> Label 8 </button>
+                        <button class="dropdown-button"> Label 9 </button>
+                    </div>
+                </div>
+            <div class="label-dropdown"> 
+                    
+                <button class="add-label-button"> Add Label </button>
+            </div>
+        </div>
+        <button (click)="AddNewPost()" class="add-label-button"> Post </button>
+    </div>
+
+</div>

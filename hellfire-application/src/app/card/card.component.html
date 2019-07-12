@@ -1,24 +1,27 @@
 <h1>
     Feed
 </h1>
-
+<!-- For Generating popups for card creation-->
+<app-popup-controller></app-popup-controller>
+<!--
+<button mat-fab>Click me!</button>
+-->
 <mat-card class="container-card">
-    <mat-card class="feed-card" *ngFor="let artist of cardsUsers">
+    <mat-card class="feed-card" *ngFor="let cardData of feedCache">
             <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{ artist }}</mat-card-title>
-                    <mat-card-subtitle> Some Song by {{ artist }} </mat-card-subtitle>
+                    <mat-card-title> {{ cardData.GetOPName() }}  </mat-card-title>
+                    <mat-card-subtitle> Date Posted: {{ cardData.GetDate() }}  Time Posted: {{ cardData.GetTime() }} </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
                     <p>
-                    The {{ artists }} is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                    {{ cardData.GetContent()  }} 
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button type=button mat-button>LIKE</button>
                     <button type=button mat-button>SHARE</button>
+                    <button (click)="DeletePost(cardData.GetHashID())" type=button mat-button>DELETE</button>
                 </mat-card-actions>
     </mat-card>
 </mat-card>
