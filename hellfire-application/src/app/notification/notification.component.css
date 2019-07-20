@@ -1,0 +1,14 @@
+.notif-element
+{
+    width: 30%;
+    height: 10%;
+    bottom: 0%;
+    left: 35%;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: rgb(49, 49, 49);
+    position: absolute;
+    justify-content: center;
+    color: antiquewhite;
+}

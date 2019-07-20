@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardData } from '../card-data';
 import { GlobalFeedNotifierService } from '../global-feed-notifier.service';
-import { IFeedServiceNotifiable } from '../ifeed-service-notifiable';
 import { Subject, Subscription } from 'rxjs';
-import { NewPostService } from '../new-post.service';
 
 @Component({
   selector: 'app-card',
@@ -27,13 +25,17 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("Current Feed Cache legnth: " + this.feedCache.length);
   }
 
+  // called on delete button click. Sends the uuid of the card that needs to be deleted to the feedNotifierService for deletion.
   DeletePost(_hashID: string): void 
   {
     this.feedNotifierService.DeletePost(_hashID)
-    // get card data's uuid pass it here to delete post
+  }
+
+  LikePost(_hashID: string): void 
+  {
+    this.feedNotifierService.ToggleLikePost(_hashID);
   }
 
 }

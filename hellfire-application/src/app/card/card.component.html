@@ -1,28 +1,43 @@
-<h1>
-    Feed
-</h1>
-<!-- For Generating popups for card creation-->
-<app-popup-controller></app-popup-controller>
-<!--
-<button mat-fab>Click me!</button>
--->
-<mat-card class="container-card">
-    <mat-card class="feed-card" *ngFor="let cardData of feedCache">
-            <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title> {{ cardData.GetOPName() }}  </mat-card-title>
-                    <mat-card-subtitle> Date Posted: {{ cardData.GetDate() }}  Time Posted: {{ cardData.GetTime() }} </mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>
-                    {{ cardData.GetContent()  }} 
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button type=button mat-button>LIKE</button>
-                    <button type=button mat-button>SHARE</button>
-                    <button (click)="DeletePost(cardData.GetHashID())" type=button mat-button>DELETE</button>
-                </mat-card-actions>
-    </mat-card>
-</mat-card>
+<div class="full-page">
+    <h1 class="header-title">
+        Feed
+    </h1>
+    <!-- For Generating popups for card creation-->
+    <app-popup-controller></app-popup-controller>
 
+
+
+    <app-notification-controller></app-notification-controller>
+    
+    <app-notification></app-notification>
+    <!--
+    <button mat-fab>Click me!</button>
+    -->
+    <mat-card class="container-card">
+        <mat-card class="feed-card" *ngFor="let cardData of feedCache">
+                <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title> {{ cardData.GetOPName() }}  </mat-card-title>
+                        <mat-card-subtitle> Date Posted: {{ cardData.GetDate() }}  Time Posted: {{ cardData.GetTime() }} </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="card-content">
+                        <p>
+                        {{ cardData.GetContent()  }} 
+                        </p>
+                        <div class="label-area">
+                            <label class="labels" *ngFor="let label of cardData.GetLabels()"> {{ label.GetLabelContent()  }} </label>
+                        </div>
+                        <div class="likes-container">
+                            <label (click)="LikePost(cardData.GetHashID())" class="likes-label"> LIKES {{cardData.GetLikes()}} </label>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions class="card-actions">
+                        <button type=button (click)="LikePost(cardData.GetHashID())" mat-button>LIKE</button>
+                        <button type=button mat-button>SHARE</button>
+                        <button class="delete-button" (click)="DeletePost(cardData.GetHashID())" type=button mat-button>DELETE</button>
+                    </mat-card-actions>
+        </mat-card>
+    </mat-card>
+</div>
+
+<app-notification></app-notification>

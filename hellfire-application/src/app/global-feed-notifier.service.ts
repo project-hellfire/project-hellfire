@@ -19,14 +19,13 @@ export class GlobalFeedNotifierService {
   // this service will listen to its own subject and notify
   public StackMofifiedState = new Subject<boolean>();
 
-  // public testPromise = new Promise(function(resolve, reject)
-  //   {
-      
-  //   }
-  // ); 
+  // The PopupModalComponent creates a card data instance and exposes its properties to be set by the ui
+  // then ships ot the the feed notifier service which is shipped back to the cardcomponent to be rendered on the feed
+  private sessionCardData: CardData = null;
   
-  constructor() 
+  constructor(private uuidService: WeakUUIDGeneratorService) 
   { 
+    this.sessionCardData = new CardData(uuidService, "", "");
     this.globalPostStack = 
     [
       new CardData(new WeakUUIDGeneratorService, "Bon Jovie", "Lorem ipsum dolor amet stumptown adaptogen intelligentsia scenester kitsch 90's four loko schlitz. Artisan kale chips normcore, master cleanse godard marfa waistcoat green juice. Edison bulb four dollar toast taxidermy pabst pug cardigan selfies aesthetic vinyl lyft. Prism enamel pin flexitarian crucifix, kombucha dreamcatcher hammock listicle marfa jianbing next level lo-fi sustainable tumblr. Mlkshk normcore swag blog cold-pressed vexillologist fam cred artisan. Jianbing sriracha ramps photo booth."),
@@ -69,6 +68,16 @@ export class GlobalFeedNotifierService {
 
   }
 
+  public GetSessionCardData(): CardData
+  {
+    return this.sessionCardData;
+  }
+
+  public ClearSessionCardData(): void
+  {
+    this.sessionCardData = new CardData(this.uuidService, "", "");
+  }
+
   // sends CardData out to the associated component asking for it and who want's it to be rendered
   GetDataObservable(): Observable<CardData[]>
   {
@@ -99,13 +108,13 @@ export class GlobalFeedNotifierService {
     this.StackMofifiedState.next(false);
   }
 
-  public SubscribeToStackModificationNotifications(any) 
+  public SubscribeToStackModificationNotifications(any): void
   {
     // wait for response from 
   } 
 
   // Delete posts on the globalPostStack via hashID
-  public DeletePost(hashID: string)
+  public DeletePost(hashID: string): void
   {
     // try to delete, but catch if return is null
     if (this.IDExists(hashID))
@@ -117,7 +126,20 @@ export class GlobalFeedNotifierService {
       {
         console.log("ERROR: " + e);
       }
-  }  
+  }
+  
+  public ToggleLikePost(hashId: string): void
+  {
+    if (this.IDExists(hashId))
+      try 
+      {
+        this.globalPostStack[this.GetCardDataIndexByUUID(hashId)].ToggleLike();
+      }
+      catch(error)
+      {
+        console.log(error);
+      }
+  }
 
   // checks against the globalPostQueue to see if a hash exists for the hashID in question
   private IDExists(hashID: string): boolean

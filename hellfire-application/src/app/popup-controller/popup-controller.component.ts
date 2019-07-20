@@ -10,9 +10,7 @@ export class PopupControllerComponent implements OnInit {
   showChildModal: boolean = false;
 
   constructor() 
-  { 
-
-  }
+  { }
 
   ngOnInit() {
   }

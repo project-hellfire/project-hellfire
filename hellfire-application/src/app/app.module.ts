@@ -12,6 +12,8 @@ import { CardComponent } from './card/card.component';
 import { PopupControllerComponent } from './popup-controller/popup-controller.component';
 import { PopupModalComponent } from './popup-modal/popup-modal.component';
 import { FormsModule } from '@angular/forms';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationControllerComponent } from './notification-controller/notification-controller.component';
 
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     CardComponent,
     PopupControllerComponent,
-    PopupModalComponent
+    PopupModalComponent,
+    NotificationComponent,
+    NotificationControllerComponent,
   ],
   imports: [
     BrowserModule,

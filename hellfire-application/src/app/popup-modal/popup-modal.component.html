@@ -3,45 +3,39 @@
 
     <!-- Modal content -->
     <div class="modal-content">
+           
         <button class="close" (click)="OnNeedToClose()">
             &times;
         </button>
         <h1>New Post</h1>
-        <textarea [(ngModel)]='cardData.content' class="content-text-area" placeholder="What do you want to say to the world..."></textarea>
+        <div class="divider"> </div>
         
+        <textarea [(ngModel)]='feedNotifierService.GetSessionCardData().content' class="content-text-area"
+            placeholder="What do you want to say..."></textarea>
+           
         <div class="label-area">
-                <div class="label-input-container">
-                <textarea class="label-display" placeholder="Label Sometshing"> </textarea>
+                <button (click)="AddNewPost()" class="post-button" type=button mat-button> Post </button>
+            <div class="label-input-container">
+                <div class="label-input-label-output">
+                    <textarea class="label-display" placeholder="Label Sometshing"
+                        [(ngModel)]='this.labelService.GetSessionLabel().labelContent'></textarea>
+                    <div class="labels-tags" *ngFor="let k of labelService.GetSessionLabels()">
+                        <label class="label-labelelements"> {{ k.GetLabelContent()  }} </label>
+                    </div>
+                </div>
                 <div class="label-dropdown-contentt">
                     <!-- When one of these buttons is clicked it needs to send an index of the label
                     to the label tag of the current post
                     -->
-                        <button class="dropdown-button"> Label 1 </button>
-                        <button class="dropdown-button"> Label 2 </button>
-                        <button class="dropdown-button"> Label 3 </button>
-                        <button class="dropdown-button"> Label 4 </button>
-                        <button class="dropdown-button"> Label 5 </button>
-                        <button class="dropdown-button"> Label 6 </button>
-                        <button class="dropdown-button"> Label 7 </button>
-                        <button class="dropdown-button"> Label 8 </button>
-                        <button class="dropdown-button"> Label 9 </button>
-                        <button class="dropdown-button"> Label 1 </button>
-                        <button class="dropdown-button"> Label 2 </button>
-                        <button class="dropdown-button"> Label 3 </button>
-                        <button class="dropdown-button"> Label 4 </button>
-                        <button class="dropdown-button"> Label 5 </button>
-                        <button class="dropdown-button"> Label 6 </button>
-                        <button class="dropdown-button"> Label 7 </button>
-                        <button class="dropdown-button"> Label 8 </button>
-                        <button class="dropdown-button"> Label 9 </button>
-                    </div>
+                    <button class="dropdown-button" *ngFor="let label of labelService.GetGlobalLabels()" (click)="AddNewLabelFromLabel(label)"> {{label.GetLabelContent()}} </button>
                 </div>
-            <div class="label-dropdown"> 
-                    
-                <button class="add-label-button"> Add Label </button>
+            </div>
+            <div class="label-dropdown">
+
+                <button (click)="AddNewLabel()" class="add-label-button" type=button mat-button> Add Label </button>
             </div>
         </div>
-        <button (click)="AddNewPost()" class="add-label-button"> Post </button>
+        
     </div>
 
 </div>
